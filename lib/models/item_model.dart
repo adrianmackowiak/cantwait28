@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 class ItemModel {
   final String id;
   final String title;
@@ -10,4 +12,8 @@ class ItemModel {
     required this.imageURL,
     required this.relaseDate,
   });
+
+  String daysLeft() {
+    return relaseDate.difference(DateTime.now()).inDays.toString();
+  }
 }
